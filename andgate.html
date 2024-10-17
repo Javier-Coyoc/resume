@@ -1,53 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AND</title>
-	<style>
-.button {
-  background-color: #008CBA; /* Blue */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
+    <style>
+        .button {
+            background-color: #008CBA; /* Blue */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-<script src = "javascript.js"></script>
-<script> 
+<script src="javascript.js"></script>
+<script>
+    function toggleImage(imageId) {
+        const image = document.getElementById(imageId);
+        if (image.src.includes("button-off-xxl.png")) {
+            image.src = "button-on.png"; // Update to the correct 'on' image path
+        } else {
+            image.src = "button-off-xxl.png"; // Update to the correct 'off' image path
+        }
+    }
 
+    function toggleInputOne() {
+        // Add your functionality for input one here
+    }
+
+    function toggleInputTwo() {
+        // Add your functionality for input two here
+    }
 </script>
 
- <button class="button" onclick = "and()">Run</button>
+<button class="button" onclick="and()">Run</button>
 <p>
 
 <table style="width:100%">
-
-  <tr>
-    <td>
-	<img src="button-off-xxl.png"  id="toggleImage" onclick="toggleImage(button-on.png); toggleInputOne();"/>
-	<br>
-    <img src="button-off-xxl.png"  id="toggleImage2" onclick="toggleImage2(button-on.png); toggleInputTwo();"/> 
-</td>
-    <td><img id="andGate" src="and2off.PNG" ></td>
-  </tr>
-
+    <tr>
+        <td>
+            <img src="button-off-xxl.png" id="toggleImage1" onclick="toggleImage('toggleImage1'); toggleInputOne();"/>
+            <br>
+            <img src="button-off-xxl.png" id="toggleImage2" onclick="toggleImage('toggleImage2'); toggleInputTwo();"/> 
+        </td>
+        <td><img id="andGate" src="and2off.PNG"></td>
+    </tr>
 </table>
 
-<a href="index.html">Back to Home</a></h3>
+<a href="index.html">Back to Home</a>
 
 </p>
 
-
-
-
-
+</body>
+</html>
 
 </body>
 </html>
