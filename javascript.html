@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum of Two Numbers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,20 +39,74 @@
         }
     </style>
 </head>
-<body>
-    <h1>Sum of Two Numbers</h1>
-    <input type="number" id="num1" placeholder="First Number" required>
-    <input type="number" id="num2" placeholder="Second Number" required>
-    <button onclick="calculateSum()">Calculate Sum</button>
-    <div class="result" id="result"></div>
-
-    <script>
-        function calculateSum() {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            const sum = num1 * num2;
-            document.getElementById('result').innerText = 'Sum: ' + sum;
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;          
         }
-    </script>
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>Add Two Numbers</h2>
+    <form>
+        <label for="fnumber">First number:</label><br>
+        <input type="number" id="fnumber" name="fnumber"><br>
+        <label for="snumber">Second number:</label><br>
+        <input type="number" id="snumber" name="snumber"><br><br>
+        <button type="button" onclick="calculateSum()">Sum</button>
+    </form>
+    <p id="sumResult"></p>
+</div>
+
+<div>
+    <h2>Area of Circle</h2>
+    <form>
+        <label for="radius">Radius:</label><br>
+        <input type="number" id="radius" name="radius"><br><br>
+        <button type="button" onclick="calculateArea()">Calculate Area</button>
+    </form>
+    <p id="areaResult"></p>
+</div>
+
+<div>
+    <h2>Average of Two Numbers</h2>
+    <form>
+        <label for="firstAverage">First number:</label><br>
+        <input type="number" id="firstAverage" name="firstAverage"><br>
+        <label for="secondAverage">Second number:</label><br>
+        <input type="number" id="secondAverage" name="secondAverage"><br><br>
+        <button type="button" onclick="calculateAverage()">Average</button>
+    </form> 
+    <p id="averageResult"></p>
+</div>
+
+<script>
+function calculateSum() {
+    let firstNumber = parseFloat(document.getElementById('fnumber').value);
+    let secondNumber = parseFloat(document.getElementById('snumber').value);
+    let sum = firstNumber + secondNumber;
+    document.getElementById('sumResult').textContent = `The sum of the two numbers is: ${sum}`;
+}
+
+function calculateArea() {
+    let radius = parseFloat(document.getElementById('radius').value);
+    let area = Math.PI * radius * radius;
+    document.getElementById('areaResult').textContent = `The area of the circle is: ${area}`;
+}
+
+function calculateAverage() {
+    let firstAverage = parseFloat(document.getElementById('firstAverage').value);
+    let secondAverage = parseFloat(document.getElementById('secondAverage').value);
+    let average = (firstAverage + secondAverage) / 2;
+    document.getElementById('averageResult').textContent = `The average of the two numbers is: ${average}`;
+}
+</script>
+
 </body>
 </html>
+
