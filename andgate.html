@@ -23,44 +23,70 @@
 
 <script src="javascript.js"></script>
 <script>
+    // Function to toggle images
     function toggleImage(imageId) {
         const image = document.getElementById(imageId);
         if (image.src.includes("button-off-xxl.png")) {
-            image.src = "button-on.png"; // Update to the correct 'on' image path
+            image.src = "button-on.png"; // 'on' state image
         } else {
-            image.src = "button-off-xxl.png"; // Update to the correct 'off' image path
+            image.src = "button-off-xxl.png"; // 'off' state image
+        }
+        updateAndGate(); // Update the AND gate logic after toggling
+    }
+
+    // Input states (assuming true = on, false = off)
+    let inputOne = false;
+    let inputTwo = false;
+
+    // Function to update the AND gate logic based on input states
+    function updateAndGate() {
+        // Check the states of the two inputs (images)
+        if (document.getElementById('toggleImage1').src.includes("button-on.png")) {
+            inputOne = true;
+        } else {
+            inputOne = false;
+        }
+        if (document.getElementById('toggleImage2').src.includes("button-on.png")) {
+            inputTwo = true;
+        } else {
+            inputTwo = false;
+        }
+
+        // Perform AND operation
+        const andResult = inputOne && inputTwo;
+
+        // Update AND gate image based on result
+        if (andResult) {
+            document.getElementById('andGate').src = "and2on.PNG"; // Display AND gate 'on' image
+        } else {
+            document.getElementById('andGate').src = "and2off.PNG"; // Display AND gate 'off' image
         }
     }
 
-    function toggleInputOne() {
-        // Add your functionality for input one here
-    }
-
-    function toggleInputTwo() {
-        // Add your functionality for input two here
+    // Function for the "Run" button that updates the AND gate based on inputs
+    function and() {
+        updateAndGate(); // Update the AND gate state when the "Run" button is clicked
     }
 </script>
 
 <button class="button" onclick="and()">Run</button>
-<p>
 
 <table style="width:100%">
     <tr>
         <td>
-            <img src="button-off-xxl.png" id="toggleImage1" onclick="toggleImage('toggleImage1'); toggleInputOne();"/>
+            <!-- Toggleable images for inputs -->
+            <img src="button-off-xxl.png" id="toggleImage1" onclick="toggleImage('toggleImage1');"/>
             <br>
-            <img src="button-off-xxl.png" id="toggleImage2" onclick="toggleImage('toggleImage2'); toggleInputTwo();"/> 
+            <img src="button-off-xxl.png" id="toggleImage2" onclick="toggleImage('toggleImage2');"/> 
         </td>
-        <td><img id="andGate" src="and2off.PNG"></td>
+        <td>
+            <!-- AND gate image -->
+            <img id="andGate" src="and2off.PNG">
+        </td>
     </tr>
 </table>
 
 <a href="index.html">Back to Home</a>
-
-</p>
-
-</body>
-</html>
 
 </body>
 </html>
