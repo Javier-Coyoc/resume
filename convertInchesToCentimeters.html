@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;          
+        }
+    </style>
+</head>
+
+<body>
+<div>
+<h2>Convert inches to centimeters</h2>
+<form>
+  <label for="fnumber">First number:</label><br>
+  <input type="number" id="fnumber" name="fnumber"><br>
+  <label for="snumber">Second number:</label><br>
+  <input type="number" id="snumber" name="snumber"><br><br>
+<button type="button" onclick="printSumToScreen()">Sum</button>
+</form> 
+
+ <p id="result"></p>
+ </div>
+<script>
+function printSumToScreen() {
+   let sum = parseFloat(fnumber.value)+parseFloat(snumber.value);
+   document.getElementById('result').textContent = `The sum of the two numbers is: ${sum}`;
+}
+</script>
+</body>
+</html>

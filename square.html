@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;          
+        }
+    </style>
+</head>
+
+<body>
+<div>
+<h2>Square Number</h2>
+<form>
+  <label for="squareNu">First number:</label><br>
+  <input type="number" id="squareNum" name="fnumber"><br>
+
+<button type="button" onclick="printSquareToScreen()">Square</button>
+</form> 
+
+ <p id="result"></p>
+ </div>
+<script>
+function printSquareToScreen() {
+   let square = parseFloat(squareNum.value)*parseFloat(squareNum.value);
+   document.getElementById('result').textContent = `The sqaure of the number is: ${square}`;
+}
+</script>
+</body>
+</html>
+

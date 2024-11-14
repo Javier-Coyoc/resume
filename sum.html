@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;          
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>Add Two Numbers</h2>
+    <form>
+        <label for="fnumber">First number:</label><br>
+        <input type="number" id="fnumber" name="fnumber"><br>
+        <label for="snumber">Second number:</label><br>
+        <input type="number" id="snumber" name="snumber"><br><br>
+        <button type="button" onclick="calculateSum()">Sum</button>
+    </form>
+    <p id="sumResult"></p>
+</div>
+
+<div>
+    <h2>Area of Circle</h2>
+    <form>
+        <label for="radius">Radius:</label><br>
+        <input type="number" id="radius" name="radius"><br><br>
+        <button type="button" onclick="calculateArea()">Calculate Area</button>
+    </form>
+    <p id="areaResult"></p>
+</div>
+
+<div>
+    <h2>Average of Two Numbers</h2>
+    <form>
+        <label for="firstAverage">First number:</label><br>
+        <input type="number" id="firstAverage" name="firstAverage"><br>
+        <label for="secondAverage">Second number:</label><br>
+        <input type="number" id="secondAverage" name="secondAverage"><br><br>
+        <button type="button" onclick="calculateAverage()">Average</button>
+    </form> 
+    <p id="averageResult"></p>
+</div>
+
+<script>
+function calculateSum() {
+    let firstNumber = parseFloat(document.getElementById('fnumber').value);
+    let secondNumber = parseFloat(document.getElementById('snumber').value);
+    let sum = firstNumber + secondNumber;
+    document.getElementById('sumResult').textContent = `The sum of the two numbers is: ${sum}`;
+}
+
+function calculateArea() {
+    let radius = parseFloat(document.getElementById('radius').value);
+    let area = Math.PI * radius * radius;
+    document.getElementById('areaResult').textContent = `The area of the circle is: ${area}`;
+}
+
+function calculateAverage() {
+    let firstAverage = parseFloat(document.getElementById('firstAverage').value);
+    let secondAverage = parseFloat(document.getElementById('secondAverage').value);
+    let average = (firstAverage + secondAverage) / 2;
+    document.getElementById('averageResult').textContent = `The average of the two numbers is: ${average}`;
+}
+</script>
+
+</body>
+</html>

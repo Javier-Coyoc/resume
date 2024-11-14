@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;          
+        }
+    </style>
+</head>
+
+<body>
+<div>
+<h2>Volume of a Cuboid</h2>
+<form>
+  <label for="length">Enter length:</label><br>
+  <input type="number" id="length" name="length"><br>
+  <label for="width">Enter width:</label><br>
+  <input type="number" id="width" name="width"><br>
+  <label for="height">Enter height:</label><br>
+  <input type="number" id="height" name="height"><br>
+<button type="button" onclick="printVolumeToScreen()">Volume</button>
+</form> 
+
+ <p id="result"></p>
+ </div>
+<script>
+function printVolumeToScreen() {
+   // Use document.getElementById to access values
+   let length = parseFloat(document.getElementById('length').value);
+   let width = parseFloat(document.getElementById('width').value);
+   let height = parseFloat(document.getElementById('height').value);
+   
+   // Calculate volume
+   let volume = length * width * height;
+   
+   // Display result
+   document.getElementById('result').textContent = `The volume of the cuboid is: ${volume}`;
+}
+</script>
+</body>
+</html>
